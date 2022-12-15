@@ -1,6 +1,6 @@
 <Mod
-	name="[v1.3] Copi's Twitchy Lua"
-	description="Execute Lua code from Twitch chat!\nSet username in mod settings."
+	name="[v1.4] Copi's Twitchy Lua"
+	description="Execute Lua code from Twitch chat!\nSet username in mod settings.\nCredits to dextercd and NathanSkimScam for helping!"
 	tags="gameplay,cheats"
 	dont_upload_folders=".git,git"
 	request_no_api_restrictions="0" 
