@@ -1,0 +1,49 @@
+<Mod
+name="Copi's Twitchy Lua"
+description="
+[img]https://i.imgur.com/5aDRWYk.png[/img]
+
+[HR][/HR]
+Run code straight from twitch chat! In real time, within the safe API, this mod allows you to run code.
+
+As twitch has bad formatting, you must write your code on one single line, but fear not!
+In Lua, you can separate lines with a semicolon (;)
+
+Messages starting with [code]LUA: [/code] will be treated like code, with the [code]LUA: [/code] bit removed. Example code: 
+[code]LUA: ThisIsAFunction(2, 5);IAmAFunctionOnAnotherLine() --this is line 2;[/code]
+
+[u][b][i]Attributions and Thanks[/i][/b][/u]
+[list]
+    [*][url=https://steamcommunity.com/id/vdslns/]Dextercd[/url]
+    [list][*]Lots of technical assistance and big brain Lua stuff.[/list] 
+    [*][url=https://steamcommunity.com/profiles/76561198095307975/]NathanSkimScam[/url]
+    [list][*]Presenting a solution to the mod's biggest flaw[/list]
+    [*][url=https://steamcommunity.com/profiles/76561198165288511/myworkshopfiles/]Horscht[/url]
+    [list][*]Pointing me to a function which made detecting errors easy.[/list] 
+    [*][url=https://steamcommunity.com/id/bruham/]Bruham[/url]
+    [list][*]Inspiring the mod, and modding tricks used in prior versions of the mod[/list]
+[/list]
+
+[u][b][i]Mod Settings[/i][/b][/u]
+[list]
+    [*]Power User
+    [list][*]Unless pandemonium is enabled, only the Power User many run code.[/list]
+    [list][*]Must match the twitch username of the user.[/list]
+    [*]Pandemonium
+    [list][*]Allows anyone to run code.[/list]
+    [list][*]EXTREMELY dangerous. Use with care.[/list]
+[/list]
+
+[u][b][i]Warnings[/i][/b][/u]
+Even I don't know the full extent of this mod's capabilities, and I take no responsibility for any damages done with it.
+I will try to make settings to disable high risk code run by users, but it's up to you to moderate who gets to use it. I will be working on a 'deny/allow' list feature to replace powerusers in the future.
+
+[HR][/HR]
+[url=https://discord.gg/mmMxjDBGnS][img]https://i.imgur.com/WeQePRb.png[/img][/url]
+[url=https://steamcommunity.com/id/Humerror/myworkshopfiles/][img]https://i.imgur.com/zVKMxSQ.png[/img][/url]
+"
+tags="gameplay,streaming integration,cheats,funny"
+dont_upload_folders=".assets" 
+dont_upload_files=""
+>
+</Mod>
