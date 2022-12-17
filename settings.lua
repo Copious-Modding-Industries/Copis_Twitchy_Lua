@@ -22,6 +22,13 @@ mod_settings =
         value_default = false,
         scope = MOD_SETTING_SCOPE_RUNTIME,
     },
+    {
+        id = "chaos",
+        ui_name = "Chaos",
+        ui_description = "No banned functions. Users may corrupt saves or damage mod settings/progress!",
+        value_default = false,
+        scope = MOD_SETTING_SCOPE_RUNTIME,
+    },
 }
 
 function ModSettingsGuiCount()
