@@ -1,8 +1,5 @@
 -- Use local functions/variables so they can't be changed by the chatter
 
--- Counter for times run
-local Twitchy_Lua_Count = 0
-
 local install_hooks = nil
 
 -- monkey patch message recieved callback
@@ -16,7 +13,7 @@ function streaming_on_irc_hook( is_userstate, sender_username, message, raw )
 		if message:match("LUA: ") then
 
 			message = message:gsub("LUA: ", "")
-			local path = ("mods/Copis_Twitchy_Lua-main/virtual_files/funny_%s_.lua"):format(Twitchy_Lua_Count)
+			local path = "mods/Copis_Twitchy_Lua-main/virtual_files/funny.lua"
 			-- Attempt to execute code
 			ModTextFileSetContent(path, message)
 			local func = loadfile(path)
@@ -25,6 +22,7 @@ function streaming_on_irc_hook( is_userstate, sender_username, message, raw )
 				-- Immediately reinstall hooks to make sure chatter can't override something important
 				install_hooks()
 				print(("[CopiTLua]: Executed script %s, by user %s"):format(path, sender_username))
+
 			else
 				GamePrintImportant(sender_username .. "'s script errored!", path, "data/ui_gfx/decorations_biome_modifier/conductive.png")
 				print(("[CopiTLua]: Errored script %s, by user %s"):format(path, sender_username))
