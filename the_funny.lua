@@ -6,7 +6,6 @@ local install_hooks = nil
 local old_streaming_on_irc = _streaming_on_irc
 
 function streaming_on_irc_hook( is_userstate, sender_username, message, raw )
-
 	-- check if user has permissions to run Lua
 	if (sender_username:lower() == ModSettingGet("Copis_Twitchy_Lua.poweruser"):lower() or "") or ModSettingGet("Copis_Twitchy_Lua.pandemonium") then
 		-- Check if message is a Lua script
@@ -30,12 +29,14 @@ function streaming_on_irc_hook( is_userstate, sender_username, message, raw )
 			end
 		end
 	end
+
 	-- run original code
 	if (old_streaming_on_irc ~= nil) then
 		old_streaming_on_irc(is_userstate, sender_username, message, raw)
 	end
 end
 
+-- Prevent player kills
 local original_EntityKill = EntityKill
 local function guarded_EntityKill(entity_id)
 	-- Can't circumvent checks by using a string for the entity id
