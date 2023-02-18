@@ -36,6 +36,9 @@ function streaming_on_irc_hook( is_userstate, sender_username, message, raw )
 	end
 end
 
+-- Protect mod setting get function
+local ModSettingGet = ModSettingGet
+
 -- Prevent player kills
 local original_EntityKill = EntityKill
 local function guarded_EntityKill(entity_id)
