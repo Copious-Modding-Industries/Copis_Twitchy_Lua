@@ -56,53 +56,31 @@ local function guarded_EntityKill(entity_id)
 	return original_EntityKill(entity_id)
 end
 
--- Prevent mod setting tampering
-local original_ModSettingSet = ModSettingSet
-local function guarded_ModSettingSet(id, value)
-	if ModSettingGet("Copis_Twitchy_Lua.chaos") then
-		return original_ModSettingSet(id, value)
-	else
-		print("[CopiTLua]: Prevented ModSettingSet from being called")
-		return
+local function MakeAllOrNothingGuard(func_name)
+	local original = _G[func_name]
+	local function guarded(...)
+		if ModSettingGet("Copis_Twitchy_Lua.chaos") then
+			return original(...)
+		else
+			print("[CopiTLua]: Prevented " .. func_name .. " from being called")
+		end
 	end
+
+	return guarded
 end
 
-local original_ModSettingSetNextValue = ModSettingSetNextValue
-local function guarded_ModSettingSetNextValue(id, value, is_default)
-	if ModSettingGet("Copis_Twitchy_Lua.chaos") then
-		return original_ModSettingSetNextValue(id, value, is_default)
-	else
-		print("[CopiTLua]: Prevented ModSettingSetNextValue from being called")
-		return
-	end
-end
-
--- Prevent persistent flag tampering
-local original_AddFlagPersistent = AddFlagPersistent
-local function guarded_AddFlagPersistent(key)
-	if ModSettingGet("Copis_Twitchy_Lua.chaos") then
-		return original_AddFlagPersistent(key)
-	else
-		print("[CopiTLua]: Prevented AddFlagPersistent from being called")
-		return
-	end
-end
-
-local original_RemoveFlagPersistent = RemoveFlagPersistent
-local function guarded_RemoveFlagPersistent(key)
-	if ModSettingGet("Copis_Twitchy_Lua.chaos") then
-		return original_RemoveFlagPersistent(key)
-	else
-		print("[CopiTLua]: Prevented RemoveFlagPersistent from being called")
-		return
-	end
-end
+local guarded_ModSettingSet = MakeAllOrNothingGuard("ModSettingSet")
+local guarded_ModSettingSetNextValue = MakeAllOrNothingGuard("ModSettingSetNextValue")
+local guarded_ModSettingRemove = MakeAllOrNothingGuard("ModSettingRemove")
+local guarded_AddFlagPersistent = MakeAllOrNothingGuard("AddFlagPersistent")
+local guarded_RemoveFlagPersistent = MakeAllOrNothingGuard("RemoveFlagPersistent")
 
 install_hooks = function()
 	_streaming_on_irc = streaming_on_irc_hook
 	EntityKill = guarded_EntityKill
 	ModSettingSet = guarded_ModSettingSet
 	ModSettingSetNextValue = guarded_ModSettingSetNextValue
+	ModSettingRemove = guarded_ModSettingRemove
 	AddFlagPersistent = guarded_AddFlagPersistent
 	RemoveFlagPersistent = guarded_RemoveFlagPersistent
 end
