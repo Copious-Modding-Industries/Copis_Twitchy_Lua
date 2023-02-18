@@ -5,3 +5,4 @@
 - [ ] Prevent large loops, or limit functions called per message (adjustable limit)
 - [ ] Add support for twitch redeems
 - [ ] Add deny/allow list functionality to replace single-username allowing
+- [ ] Prevent entitykilling worldstate and playerstats entities and other "crucial" entities
