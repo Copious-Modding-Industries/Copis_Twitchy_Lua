@@ -71,6 +71,7 @@ end
 
 local guarded_ModSettingSet = MakeAllOrNothingGuard("ModSettingSet")
 local guarded_ModSettingSetNextValue = MakeAllOrNothingGuard("ModSettingSetNextValue")
+local guarded_ModSettingRemove = MakeAllOrNothingGuard("ModSettingRemove")
 local guarded_AddFlagPersistent = MakeAllOrNothingGuard("AddFlagPersistent")
 local guarded_RemoveFlagPersistent = MakeAllOrNothingGuard("RemoveFlagPersistent")
 
@@ -79,6 +80,7 @@ install_hooks = function()
 	EntityKill = guarded_EntityKill
 	ModSettingSet = guarded_ModSettingSet
 	ModSettingSetNextValue = guarded_ModSettingSetNextValue
+	ModSettingRemove = guarded_ModSettingRemove
 	AddFlagPersistent = guarded_AddFlagPersistent
 	RemoveFlagPersistent = guarded_RemoveFlagPersistent
 end
