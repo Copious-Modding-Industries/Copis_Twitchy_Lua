@@ -7,7 +7,7 @@ description="
 Run code straight from twitch chat! In real time, within the safe API, this mod allows you to run code.
 
 As twitch has bad formatting, you must write your code on one single line, but fear not!
-In Lua, you can separate lines with a semicolon (;)
+In Lua, you can separate lines with a semicolon ([code];[/code]) or write multiple lines to a file and call the file later.
 
 Messages starting with [code]LUA: [/code] will be treated like code, with the [code]LUA: [/code] bit removed. Example code: 
 [code]LUA: ThisIsAFunction(2, 5);IAmAFunctionOnAnotherLine() --this is line 2;[/code]
@@ -15,7 +15,7 @@ Messages starting with [code]LUA: [/code] will be treated like code, with the [c
 [u][b][i]Attributions and Thanks[/i][/b][/u]
 [list]
     [*][url=https://steamcommunity.com/id/vdslns/]Dextercd[/url]
-    [list][*]Lots of technical assistance and big brain Lua stuff.[/list] 
+    [list][*]Allowing this mod to exist, with excellent knowledge of Lua and endless support.[/list] 
     [*][url=https://steamcommunity.com/profiles/76561198095307975/]NathanSkimScam[/url]
     [list][*]Presenting a solution to the mod's biggest flaw[/list]
     [*][url=https://steamcommunity.com/profiles/76561198165288511/myworkshopfiles/]Horscht[/url]
@@ -31,12 +31,15 @@ Messages starting with [code]LUA: [/code] will be treated like code, with the [c
     [list][*]Must match the twitch username of the user.[/list]
     [*]Pandemonium
     [list][*]Allows anyone to run code.[/list]
-    [list][*]EXTREMELY dangerous. Use with care.[/list]
+    [list][*]Possibly risky. Use with care.[/list]
+    [*]Chaos
+    [list][*]Disables protections on all functions.[/list]
+    [list][*][b]VERY DANGEROUS[/b]. Use with care.[/list]
 [/list]
 
 [u][b][i]Warnings[/i][/b][/u]
 Even I don't know the full extent of this mod's capabilities, and I take no responsibility for any damages done with it.
-I will try to make settings to disable high risk code run by users, but it's up to you to moderate who gets to use it. I will be working on a 'deny/allow' list feature to replace powerusers in the future.
+I, Copi, and anyone else affiliated with this project are not responsible for your misuse of this mod. Beware of malicious users!
 
 [HR][/HR]
 [url=https://discord.gg/mmMxjDBGnS][img]https://i.imgur.com/WeQePRb.png[/img][/url]
