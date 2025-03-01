@@ -26,15 +26,32 @@ Messages starting with [code]LUA: [/code] will be treated like code, with the [c
 
 [u][b][i]Mod Settings[/i][/b][/u]
 [list]
-    [*]Power User
+    [*]Power User(s)
     [list][*]Unless pandemonium is enabled, only the Power User many run code.[/list]
     [list][*]Must match the twitch username of the user.[/list]
+    [list][*]Space separated list (e.g. CopiHuman Conga_Lyne).[/list]
     [*]Pandemonium
     [list][*]Allows anyone to run code.[/list]
     [list][*]Possibly risky. Use with care.[/list]
     [*]Chaos
     [list][*]Disables protections on all functions.[/list]
     [list][*][b]VERY DANGEROUS[/b]. Use with care.[/list]
+[/list]
+
+[u][b][i]Preset Variables[/i][/b][/u]
+[list]
+    [*]Player
+    [list][*]Returns a reference to the first player entity[/list]
+    [*]Px, Py, Pr, Psx, Psy
+    [list][*]Returns the transform data of the first player entity[/list]
+    [*]Mx, My
+    [list][*]Returns the cursor position[/list]
+    [*]Cx, Cy
+    [list][*]Returns the camera position[/list]
+    [*]Ploop(func)
+    [list][*]Iterates over all players, executing func(player) on them[/list]
+    [*]Comp
+    [list][*]EntityGetFirstComponentIncludingDisabled[/list]
 [/list]
 
 [u][b][i]Warnings[/i][/b][/u]
